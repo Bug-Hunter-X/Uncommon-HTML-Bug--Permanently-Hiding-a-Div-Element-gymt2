@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").style.display = "none";
+      // Missing re-addition of the div element after removing it.
+      // This results in a situation where the div is permanently hidden and cannot be shown again.
+    }
+  </script>
+</body>
+</html>
